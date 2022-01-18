@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>Posts - linux</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Posts</a></h1>
+                <nav><ul>
+                    <li><a href="/category/misc.html">misc</a></li>
+                    <li><a href="/category/tech.html">tech</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/posts/2021/04/postfix-queue-debug-and-mock-smtp-servers/">postfix queue debug and mock smtp servers</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2021-04-27T00:00:00-05:00">
+                Published: Tue 27 April 2021
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/joe-ashcraft.html">Joe Ashcraft</a>
+        </address>
+<p>In <a href="/category/tech.html">tech</a>.</p>
+<p>tags: <a href="/tag/linux.html">linux</a> <a href="/tag/mail.html">mail</a> <a href="/tag/monitoring.html">monitoring</a> </p>
+</footer><!-- /.post-info --><p>To create and test a <a href="https://github.com/racker/rackspace-monitoring-agent-plugins-contrib">monitoring plugin for Postfix</a>, I had to force Postfix to queue some messages.</p>
+<p>I looked at several Mock SMTP Servers <LINKS> but none was quite as simple as I needed.</p>
+<p>I ended up using Postfix's own features.</p>
+<h2>Defer All Messages</h2>
+<p>postfix/main.cf</p>
+<div class="highlight"><pre><span></span><code>default_transport = defer
+</code></pre></div>
+
+<h2>Defer Some Messages</h2>
+<p>postfix/main.cf</p>
+<div class="highlight"><pre><span></span><code>transport_maps = hash:/etc/postfix/transport
+</code></pre></div>
+
+<p>postfix/transport</p>
+<div class="highlight"><pre><span></span><code><span class="na">.example.com</span><span class="w"> </span><span class="no">error</span><span class="p">:</span><span class="w"></span>
+<span class="nf">example.com</span><span class="w"> </span><span class="no">defer</span><span class="p">:</span><span class="w"></span>
+</code></pre></div>
+
+<p>sources:</p>
+<ul>
+<li><a href="https://www.linuxbabe.com/mail-server/postfix-transport-map-relay-map-flexible-email-delivery">Use Postfix Transport Map &amp; Relayhost Map For Flexible Email Delivery</a> by Xiao Guoan</li>
+<li><a href="https://muffinresearch.co.uk/fake-smtp-server-with-python/">Fake SMTP server with Python</a> by Stuart Colville</li>
+<li><a href="https://web.archive.org/web/20161221205320/notepad.mmakowski.com/Tech/E-mail%20Testing%20with%20Mock%20SMTP%20Server">E-mail Testing with Mock SMTP Server</a> by Maciek Makowski</li>
+<li><a href="http://www.postfix.org/transport.5.html">Postfix Manual - transport(5)</a></li>
+<li><a href="https://tools.ietf.org/html/rfc5321.html">RFC5321 Simple Mail Transfer Protocol</a></li>
+<li><a href="https://docs.python.org/3/library/smtpd.html">smtpd – SMTP Server – Python 4 Documentation</a></li>
+</ul>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
