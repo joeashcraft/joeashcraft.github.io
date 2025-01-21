@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-          <title>Posts</title>
+        <title>Posts</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charset="utf-8" />
         <!-- twitter card metadata -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.gravatar.com/avatar/7e4f07916b6f1efbd1f808fd3d8355d2?s=256">
-<meta name="twitter:site" content="@cellojoe1">
-<meta name="twitter:title" content="postfix queue debug and mock smtp servers">
-<meta name="twitter:description" content="To create and test a monitoring plugin for Postfix, I had to force Postfix to queue some messages. I looked at several Mock SMTP Servers …">
         <!-- OG Tags -->
-<meta property="og:url" content="/posts/2021/04/postfix-queue-debug-and-mock-smtp-servers/"/>
-<meta property="og:title" content="Posts | postfix queue debug and mock smtp servers" />
-<meta property="og:description" content="To create and test a monitoring plugin for Postfix, I had to force Postfix to queue some messages. I looked at several Mock SMTP Servers …" />
+<meta property="og:url" content="/tag/conversation"/>
+<meta property="og:title" content="Posts | conversation" />
         <!-- favicon -->
         <link rel="icon" type="image/png" href="/images/pelly.png">
         <!-- moment.js for date formatting -->
@@ -43,12 +37,6 @@
                     });
             };
         </script>
-
-        <meta name="description" content="To create and test a monitoring plugin for Postfix, I had to force Postfix to queue some messages. I looked at several Mock SMTP Servers …" />
-
-    <meta name="tags" content="linux" />
-    <meta name="tags" content="email" />
-
 </head>
 <body>
     <div role="banner" id="masthead">
@@ -64,57 +52,37 @@
         </header>
     </div>
         <div class="page" role="main">
-  <div class="article" role="article">
-    <article>
-        <footer>
-            <a name="top"></a>
-            <p>
-              <time datetime=" 2021-04-27 00:00:00-05:00">
-                <script>document.write(moment('2021-04-27 00:00:00-05:00').format('LL'));</script>
-              </time>
-            </p>
-        </footer>
-        <header>
-          <h2>
-            postfix queue debug and mock smtp servers
-          </h2>
-        </header>
-      <div class="content">
-         <p>To create and test a <a href="https://github.com/racker/rackspace-monitoring-agent-plugins-contrib">monitoring plugin for Postfix</a>, I had to force Postfix to queue some messages.</p>
-<p>I looked at several Mock SMTP Servers <LINKS> but none was quite as simple as I needed.</p>
-<p>I ended up using Postfix's own features.</p>
-<h2>Defer All Messages</h2>
-<p>postfix/main.cf</p>
-<div class="highlight"><pre><span></span><code>default_transport = defer
-</code></pre></div>
-
-<h2>Defer Some Messages</h2>
-<p>postfix/main.cf</p>
-<div class="highlight"><pre><span></span><code>transport_maps = hash:/etc/postfix/transport
-</code></pre></div>
-
-<p>postfix/transport</p>
-<div class="highlight"><pre><span></span><code><span class="na">.example.com</span><span class="w"> </span><span class="no">error</span><span class="p">:</span>
-<span class="nf">example.com</span><span class="w"> </span><span class="no">defer</span><span class="p">:</span>
-</code></pre></div>
-
-<p>sources:</p>
-<ul>
-<li><a href="https://www.linuxbabe.com/mail-server/postfix-transport-map-relay-map-flexible-email-delivery">Use Postfix Transport Map &amp; Relayhost Map For Flexible Email Delivery</a> by Xiao Guoan</li>
-<li><a href="https://muffinresearch.co.uk/fake-smtp-server-with-python/">Fake SMTP server with Python</a> by Stuart Colville</li>
-<li><a href="https://web.archive.org/web/20161221205320/notepad.mmakowski.com/Tech/E-mail%20Testing%20with%20Mock%20SMTP%20Server">E-mail Testing with Mock SMTP Server</a> by Maciek Makowski</li>
-<li><a href="http://www.postfix.org/transport.5.html">Postfix Manual - transport(5)</a></li>
-<li><a href="https://tools.ietf.org/html/rfc5321.html">RFC5321 Simple Mail Transfer Protocol</a></li>
-<li><a href="https://docs.python.org/3/library/smtpd.html">smtpd – SMTP Server – Python 4 Documentation</a></li>
-</ul>
-      </div>
-      <div class="back-to-top">
-          <a href="#top">back to top</a>
-      </div>
-    </article>
-  </div>
-<!-- end article -->
-                <footer>
+<div class="page-title">
+    <h1>conversation</h1>
+</div>
+<div class="articles">
+        <ol>
+            <li>
+                <article>
+                    <footer>
+                         <p>
+                            <time datetime="2018-01-05 00:00:00-06:00">
+                                <script>document.write(moment('2018-01-05 00:00:00-06:00').format('LL'));</script>
+                            </time>
+                                    in <a href="/category/today-i-learned.html"><span class="category-tag">Today I Learned</span></a>
+                        </p>
+                    </footer>
+                    <header>
+                        <a href="/posts/2018/01/negotiation/">
+                            <h2>Negotiation</h2>
+                        </a>
+                    </header>
+                    <div class="summary"><p>How to be a negotiator and what to watch out for from the other party.</p> </div>
+                    <div class="tags">
+                        <ul class="tags">
+                            <li><a href="/tag/conversation.html" class="tag">conversation</a></li>
+                        </ul>
+                    </div>
+                </article>
+            </li>
+        </ol>
+        
+</div>                <footer>
                     <div class="icons">
                         <a href="https://github.com/joeashcraft" target="_blank"><div class="icon-github icon"></div></a>
                         <a href="https://t.me/joe2ashcraft3" target="_blank"><div class="icon-telegram icon"></div></a>
